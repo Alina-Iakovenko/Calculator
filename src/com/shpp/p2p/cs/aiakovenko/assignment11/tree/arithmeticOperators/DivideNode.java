@@ -1,5 +1,6 @@
 package com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticOperators;
 
+import com.shpp.p2p.cs.aiakovenko.assignment11.tree.AbstractNode;
 import com.shpp.p2p.cs.aiakovenko.assignment11.tree.Node;
 
 import java.util.List;
@@ -7,31 +8,14 @@ import java.util.List;
 /***
  * Class to save a divider operator as a tree node and set rules for division
  */
-public class DivideNode extends Node {
-    String valueString;
-    List<Node> childNodes;
+public class DivideNode extends AbstractNode {
     Node dividend;
     Node divisor;
 
     public DivideNode(List<Node> childNodes) {
-        this.valueString = "/";
-        this.childNodes = childNodes;
+        super("/", childNodes);
         this.dividend = childNodes.get(0);
         this.divisor = childNodes.get(1);
-    }
-    /***
-     * Getter for node`s value
-     * @return      string for this root
-     */
-    public String getValueString() {
-        return valueString;
-    }
-    /***
-     * Getter for node's children
-     * @return      left child node
-     */
-    public List<Node> getChildNodes() {
-        return childNodes;
     }
 
     /***

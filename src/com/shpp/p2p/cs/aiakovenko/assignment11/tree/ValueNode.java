@@ -1,36 +1,17 @@
 package com.shpp.p2p.cs.aiakovenko.assignment11.tree;
 
-import java.util.List;
-
 /***
  * Class to save a number as a tree node and set rules for this node
  * This is always a leaf node that's why it hasn't children
  */
-public class ValueNode extends Node {
-    // String for current node
-    String valueString;
-    // Root parsed in double
+public class ValueNode extends AbstractNode {
+
     double value;
 
     public ValueNode(String value) {
-        this.valueString = value;
+        super(value, null);
         this.value = Double.parseDouble(value);
     }
-    /***
-     * Getter for node`s value
-     * @return      string for this root
-     */
-    public String getValueString() {
-        return valueString;
-    }
-    /***
-     * Getter for node's children
-     * @return      left child node
-     */
-    public List<Node> getChildNodes() {
-        return childNodes;
-    }
-
     /***
      * This node just returns its value and calculates anything
      * @return double

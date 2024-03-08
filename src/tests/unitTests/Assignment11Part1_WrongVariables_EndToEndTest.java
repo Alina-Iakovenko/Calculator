@@ -1,9 +1,9 @@
-package tests;
+package tests.unitTests;
 
-import com.shpp.p2p.cs.aiakovenko.assignment11.SimpleCalculator;
+import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
 import org.junit.jupiter.api.Test;
 
-public class InvalidCasesSimpleCalculatorTest {
+public class Assignment11Part1_WrongVariables_EndToEndTest {
     @Test
     public void QuotesAndSpaces(){
         String[] args = {"\" 1 + 2 * x \"", "\"x = 2\""};
@@ -17,7 +17,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println("Expected result: " + expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 
@@ -35,7 +35,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 
@@ -53,7 +53,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -70,7 +70,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 
@@ -88,7 +88,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -105,7 +105,7 @@ public class InvalidCasesSimpleCalculatorTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 

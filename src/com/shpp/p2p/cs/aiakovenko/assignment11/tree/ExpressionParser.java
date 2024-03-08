@@ -1,15 +1,15 @@
 package com.shpp.p2p.cs.aiakovenko.assignment11.tree;
 
 import com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticOperators.*;
+import com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticFormulas.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /***
  * Class to create BinaryTree with arithmetic formula from string
  */
-public class SimpleExpressionParser {
+public class ExpressionParser {
+
     /***
      * Parse string to BinaryTree to save formula
      * @param formula   string with formula
@@ -20,13 +20,13 @@ public class SimpleExpressionParser {
 
     public Node parseStringToTree(String formula) throws IllegalArgumentException {
         //find first "+"
-        int indexOfPlus = formula.indexOf('+');
+        int indexOfPlus = checkSign('+', formula);
         if (indexOfPlus > 0) {
-            Node root = new PlusNode(createChildNotes(formula, indexOfPlus));
+            AbstractNode root = new PlusNode(createChildNotes(formula, indexOfPlus));
             return root;
         }
         //find first "-"
-        int indexOfMinus = formula.lastIndexOf('-');
+        int indexOfMinus = checkSign('-', formula);
         /* Check if
          * the minus is unary (is the first or precede by another sign),
          * and there is another minus
@@ -34,8 +34,8 @@ public class SimpleExpressionParser {
          */
         if (indexOfMinus == 0 ||
                 (indexOfMinus > 0 && (formula.charAt(indexOfMinus - 1) == '*'
-                                        || formula.charAt(indexOfMinus - 1) == '/'
-                                        || formula.charAt(indexOfMinus - 1) == '^'))){
+                        || formula.charAt(indexOfMinus - 1) == '/'
+                        || formula.charAt(indexOfMinus - 1) == '^'))) {
             int indexOfSecondMinus = formula.indexOf('-', indexOfMinus + 1);
             if (indexOfSecondMinus > -1) {
                 indexOfMinus = indexOfSecondMinus;
@@ -47,26 +47,26 @@ public class SimpleExpressionParser {
                 && formula.charAt(indexOfMinus - 1) != '*'
                 && formula.charAt(indexOfMinus - 1) != '/'
                 && formula.charAt(indexOfMinus - 1) != '^')) {
-            Node root = new MinusNode(createChildNotes(formula, indexOfMinus));
+            AbstractNode root = new MinusNode(createChildNotes(formula, indexOfMinus));
             return root;
         }
 
         //find first "*"
-        int indexOfMultiply = formula.indexOf('*');
+        int indexOfMultiply = checkSign('*', formula);
         if (indexOfMultiply > 0) {
-            Node root = new MultiplyNode(createChildNotes(formula, indexOfMultiply));
+            AbstractNode root = new MultiplyNode(createChildNotes(formula, indexOfMultiply));
             return root;
         }
         //find first "/"
-        int indexOfDivision = formula.indexOf('/');
+        int indexOfDivision = checkSign('/', formula);
         if (indexOfDivision > 0) {
-            Node root = new DivideNode(createChildNotes(formula, indexOfDivision));
+            AbstractNode root = new DivideNode(createChildNotes(formula, indexOfDivision));
             return root;
         }
         //find first "^"
-        int indexOfPower = formula.indexOf('^');
+        int indexOfPower = checkSign('^', formula);
         if (indexOfPower > 0) {
-            Node root = new PowerNode(createChildNotes(formula, indexOfPower));
+            AbstractNode root = new PowerNode(createChildNotes(formula, indexOfPower));
             return root;
         }
         //find first unary "-"
@@ -75,21 +75,96 @@ public class SimpleExpressionParser {
             String childNodeString = formula.substring(1);
             Node childNode = parseStringToTree(childNodeString);
             childNodes.add(childNode);
-            Node root = new UnaryMinusNode(childNodes);
+            childNodes.add(null);
+            AbstractNode root = new UnaryMinusNode(childNodes);
             return root;
         }
         //find a number (contains only digits and period)
         if (ValueNode.isNumber(formula)) {
-            Node root = new ValueNode(formula);
+            AbstractNode root = new ValueNode(formula);
             return root;
         }
         //find a valid variable (contains only letters)
         if (VariableNode.isValidVariableName(formula)) {
             Node root = new VariableNode(formula);
             return root;
-        } else {
+        }
+        // brackets
+        if (formula.charAt(0) == '(' && formula.charAt(formula.length()-1) == ')') {
+            Node root = new BracketsNode(formula.substring(1,formula.length()-1));
+            return root;
+        }
+        // arithmetic formulas
+        if (formula.startsWith("sin(")){
+            Node root = new SineNode(formula.substring(4, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("cos(")){
+            Node root = new CosineNode(formula.substring(4, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("tan(")){
+            Node root = new TangentNode(formula.substring(4, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("atan(")){
+            Node root = new AtangentNode(formula.substring(5, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("log10(")){
+            Node root = new Logarithm10Node(formula.substring(6, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("log2(")){
+            Node root = new LogarithmNode(formula.substring(5, formula.length()-1));
+            return root;
+        }
+        if (formula.startsWith("sqrt(")){
+            Node root = new SquareNode(formula.substring(5, formula.length()-1));
+            return root;
+        }
+        else {
             throw new IllegalArgumentException(": formula isn`t valid");
         }
+    }
+
+    /***
+     * Find sign in formula out of brackets
+     * @param sign      sign to find
+     * @param formula   string to check
+     * @return          index of sign or -1 if sign is absent
+     */
+    public int checkSign(char sign, String formula) {
+        Deque<Character> brackets = new ArrayDeque<>();
+        // find the latest minus
+        if (sign == '-') {
+            for (int i = formula.length() - 1; i > 0; i--) {
+                if (formula.charAt(i) == ')') {
+                    brackets.push(formula.charAt(i));
+                }
+                if (formula.charAt(i) == '(') {
+                    brackets.pop();
+                }
+                if (formula.charAt(i) == sign && brackets.isEmpty()) {
+                    return i;
+                }
+            }
+        }
+        // find the first occurrence out of brackets of given sign
+        else {
+            for (int i = 0; i < formula.length(); i++) {
+                if (formula.charAt(i) == '(') {
+                    brackets.push(formula.charAt(i));
+                }
+                if (formula.charAt(i) == ')') {
+                    brackets.pop();
+                }
+                if (formula.charAt(i) == sign && brackets.isEmpty()) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     /***

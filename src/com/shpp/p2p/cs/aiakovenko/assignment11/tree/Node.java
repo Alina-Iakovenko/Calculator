@@ -3,14 +3,10 @@ package com.shpp.p2p.cs.aiakovenko.assignment11.tree;
 import java.util.List;
 
 /***
- * Interface for every node type to create a BinaryTree
+ * An interface for nodes with operators, formulas, numbers and variables,
+ * that defines node's common behavior
  */
-public abstract class Node {
-    // String for current node
-    String valueString;
-    // Link to child nodes
-    List<Node> childNodes;
-
+public interface Node {
     /***
      * Sets the behavior of the node for calculating and/or value retrieval
      * @return  double as a result
@@ -21,14 +17,10 @@ public abstract class Node {
      * Getter for node`s value
      * @return      string for this root
      */
-    public String getValueString() {
-        return valueString;
-    }
+    public String getValueString();
     /***
      * Getter for node's children
      * @return      left child node
      */
-    public List<Node> getChildNodes() {
-        return childNodes;
-    }
+    public List<Node> getChildNodes();
 }

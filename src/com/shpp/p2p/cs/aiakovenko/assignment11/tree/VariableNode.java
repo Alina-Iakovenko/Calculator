@@ -3,38 +3,22 @@ package com.shpp.p2p.cs.aiakovenko.assignment11.tree;
 import com.shpp.p2p.cs.aiakovenko.assignment11.inputParser.VariableMap;
 
 import java.util.HashMap;
-import java.util.List;
 
 /***
  * Class to save a variable as a tree node, check it and set rules for this node
  * This is always a leaf node that's why it hasn't children
  */
-public class VariableNode extends Node {
-    // String for current node
-    String valueString;
+public class VariableNode extends AbstractNode {
+
     // String for current node with another name to make clearer some methods
     String variable;
 
     public VariableNode(String variable) {
-        this.valueString = variable;
+        super(variable, null);
         this.variable = variable;
     }
     public String getVariable() {
         return this.variable;
-    }
-    /***
-     * Getter for node`s value
-     * @return      string for this root
-     */
-    public String getValueString() {
-        return valueString;
-    }
-    /***
-     * Getter for node's children
-     * @return      left child node
-     */
-    public List<Node> getChildNodes() {
-        return childNodes;
     }
 
     /***
@@ -43,9 +27,9 @@ public class VariableNode extends Node {
      * @return              true if it is
      * @throws IllegalArgumentException     if string consists anything else except letters
      */
-    public static boolean isValidVariableName(String variable) throws IllegalArgumentException {
+    static boolean isValidVariableName(String variable) throws IllegalArgumentException {
         if (!variable.matches("^[a-zA-Z]*")) {
-            throw new IllegalArgumentException(": invalid variable name in formula: " + variable);
+            return false;
         }
         return true;
     }

@@ -1,14 +1,15 @@
-package tests;
+package tests.unitTests;
 
 import com.shpp.p2p.cs.aiakovenko.assignment11.inputParser.FormulaString;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FormulaStringBracketsTest {
+public class FormulaString_Brackets_UnitTest {
 
     @Test
     public void testAreValidBrackets_simpleCase() {
+
         assertTrue(FormulaString.areValidBrackets("2+(3-5)"));
     }
 
@@ -19,6 +20,7 @@ public class FormulaStringBracketsTest {
 
     @Test
     public void testAreValidBrackets_BracketsInside() {
+
         assertTrue(FormulaString.areValidBrackets("2+(3-(9-5))"));
     }
 

@@ -1,5 +1,7 @@
 package com.shpp.p2p.cs.aiakovenko.assignment11.inputParser;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /***
@@ -8,7 +10,7 @@ import java.util.Stack;
 public class FormulaString implements ArgsParser {
     public String formula;
 
-    public FormulaString(String[] args) throws RuntimeException {
+    public FormulaString(String[] args) throws RuntimeException, IllegalArgumentException {
         if (args.length > 0) {
             // Remove quotes, spaces and replace -- to +
             String formulaString = getClearString(args[0].trim());
@@ -24,7 +26,7 @@ public class FormulaString implements ArgsParser {
     /***
      * Checks if string meets formula rules
      * @param formula   string to check
-     * @return          true if everything is correct or Exception if sth is wrong
+     * @return true if everything is correct or Exception if sth is wrong
      * @throws IllegalArgumentException if string doesn`t match formula rules
      */
     protected boolean isValidFormula(String formula) throws IllegalArgumentException {
@@ -38,7 +40,7 @@ public class FormulaString implements ArgsParser {
             throw new IllegalArgumentException(": string doesn`t match formula rules (wrong last symbol)");
         }
         // Check if there isn't any wrong symbol in string (not a letter, a number, a dot or an operator
-        for (int i = 0; i < charArray.length - 2; i++) {
+        for (int i = 0; i < charArray.length - 1; i++) {
             if (!Character.isDigit(charArray[i])
                     && !Character.isLetter(charArray[i])
                     && charArray[i] != '+' && charArray[i] != '-'
@@ -56,27 +58,47 @@ public class FormulaString implements ArgsParser {
                 throw new IllegalArgumentException(": string doesn`t match formula rules");
             }
             // Check for empty brackets
-            if (charArray[i] == '(' && charArray[i+1] == ')'){
+            if (charArray[i] == '(' && charArray[i + 1] == ')') {
                 throw new IllegalArgumentException(": string doesn`t match formula rules because there are empty brackets");
             }
+//            // check if there isn't a case with brackets without an operator if brackets isn't the first or the latest
+//            if (charArray[i] == '(' && ((i > 0) && charArray[i - 1] != '+'
+//                    && charArray[i - 1] != '-' && charArray[i - 1] != '*'
+//                    && charArray[i - 1] != '/' && charArray[i - 1] != '^'
+//                    && charArray[i - 1] != '(')) {
+//                throw new IllegalArgumentException(": string doesn`t match formula rules because there are brackets without operator before");
+//            }
+//            if (charArray[i] == ')' && ((i < charArray.length - 1) && charArray[i + 1] != '+'
+//                    && charArray[i + 1] != '-' && charArray[i + 1] != '*'
+//                    && charArray[i + 1] != '/' && charArray[i + 1] != '^'
+//                    && charArray[i + 1] != ')')) {
+//                throw new IllegalArgumentException(": string doesn`t match formula rules because there are brackets without operator after");
+//            }
         }
         return true;
     }
-    public static boolean areValidBrackets(String formula) {
-        Stack<Character> brackets = new Stack<>();
+
+    /***
+     * Check if all open bracket matches close bracket in formula
+     * @param formula   String to check
+     * @return          true if the formula is correct
+     * @throws IllegalArgumentException        if brackets in string don't match formula rules
+     */
+    public static boolean areValidBrackets(String formula) throws IllegalArgumentException{
+        Deque<Character> brackets = new ArrayDeque<>();
         for (Character character : formula.toCharArray()) {
-            if (character == '('){
+            if (character == '(') {
                 brackets.push(character);
             }
-            if (character == ')'){
-                if (brackets.empty()){
+            if (character == ')') {
+                if (brackets.isEmpty()) {
                     throw new IllegalArgumentException(": brackets in string doesn`t match formula rules");
                 } else {
                     brackets.pop();
                 }
             }
         }
-        if (!brackets.empty()){
+        if (!brackets.isEmpty()) {
             throw new IllegalArgumentException(": brackets in string doesn`t match formula rules");
         }
         return true;

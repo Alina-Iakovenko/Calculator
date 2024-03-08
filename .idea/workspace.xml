@@ -4,35 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/SimpleCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/ArgsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/VariableMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/SimpleExpressionParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ValueNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/ArithmeticFormulas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/DivideNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MinusNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MultiplyNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PlusNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PowerNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/UnaryMinusNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/FormulaStringBracketsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/FormulaStringWithPrintedExceptionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/InvalidCasesSimpleCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/SimpleCalculatorCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/SimpleCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/SimpleCalculatorVariableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week11.iml" afterDir="false" />
+    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="corrected silly mistake in MinusNode">
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/AbstractNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/BracketsNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/ArithmeticFormulaNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/AtangentNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/CosineNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm10Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/LogarithmNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SineNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SquareNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/TangentNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/Assignment11Part1_week10_EndToEndTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/Assignment11Part1_week11_EndToEndTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/unitTests/ExpressionParser_BracketsAndFormulas_UnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/SimpleCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/SimpleExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ValueNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ValueNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/ArithmeticFormulas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/DivideNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/DivideNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MinusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MinusNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MultiplyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/MultiplyNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PlusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PlusNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PowerNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/PowerNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/UnaryMinusNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticOperators/UnaryMinusNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/FormulaStringBracketsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/FormulaString_Brackets_UnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/FormulaStringWithPrintedExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_ArgsWithPrintedException_EndToEndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/InvalidCasesSimpleCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_WrongVariables_EndToEndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/SimpleCalculatorCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_CalculatorUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/SimpleCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_UnaryMinus_EndToEndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/SimpleCalculatorVariableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_WithVariable_EndToEndTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +66,39 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Assignment11Part1.executor": "Run",
     "Application.SimpleCalculator.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.Assignment11Part1CalculatorTest.test_Calculator_BracketsMultiplyDivideBrackets.executor": "Run",
+    "JUnit.Assignment11Part1CalculatorTest.test_Calculator_falseBrackets.executor": "Run",
+    "JUnit.Assignment11Part1Test.executor": "Run",
+    "JUnit.Assignment11Part1VariableTest.test_SimpleCalculator_sthTerrible.executor": "Debug",
+    "JUnit.Assignment11Part1_EndToEndTest.NoValueForVariable.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.QuotesAndSpaces.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_2PairsOfBrackets.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2_false.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside_false.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_EmptyBrackets_false.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_simpleCase.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testCheckSign_simpleCase3.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testConstructor_Brackets_true.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testConstructor_InvalidBrackets_Exception.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.testParseStringToTree_PlusMinus.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_BracketsMultiplyDivideBrackets.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_DivideInZero.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_SimpleNegativeNumber_DoubleNegativePower_Exception.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_falseBrackets.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_zeroInNegativePower.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus.executor": "Run",
+    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_UnaryMinusAtEnd.executor": "Run",
+    "JUnit.Assignment11Part1_UnaryMinus_UnitTest.executor": "Run",
+    "JUnit.Assignment11Part1_week10_EndToEndTest.executor": "Run",
+    "JUnit.Assignment11Part1_week11_EndToEndTest.executor": "Run",
+    "JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula.executor": "Run",
     "JUnit.FormulaStringBracketsTest.executor": "Run",
     "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotClosed_false.executor": "Run",
     "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotOpened_false.executor": "Run",
@@ -84,11 +120,48 @@
     "JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_BracketsInside_false.executor": "Run",
     "JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_EmptyBrackets_false.executor": "Run",
     "JUnit.FormulaStringWithPrintedExceptionTest.test_isValidVariableName_VariableNode_.executor": "Run",
+    "JUnit.FormulaString_Brackets_UnitTest.testConstructor_InvalidBrackets_Exception.executor": "Run",
     "JUnit.InvalidCasesSimpleCalculatorTest.executor": "Run",
     "JUnit.SimpleCalculatorCalculatorTest.executor": "Run",
     "JUnit.SimpleCalculatorTest.executor": "Run",
     "JUnit.SimpleCalculatorVariableTest.executor": "Run",
+    "JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_Variable_Multiply_UnaryVariable_VariableTwiceOccurred_WithoutNumber.executor": "Run",
+    "JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_sthTerrible.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase0.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase2.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase3.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase4.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase5.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase6.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsPlusNumberMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusBracketsMinusDivide.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusUnaryMinusBracketsMinusDivide.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsPlusUnaryMinusBrackets.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinusMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplySimpleBrackets.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplysMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_PlusMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleBracketsMultiply.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus2.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInBrackets.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInPower2.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusForNumberInPower2.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinusMinus.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_atan.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_cos.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_log10.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_log2.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_tan.executor": "Run",
+    "JUnit.SimpleExpressionParserTest.testParseStringToTree_ійке.executor": "Run",
     "JUnit.tests in week11.executor": "Run",
+    "JUnit.tests.unitTests in week11.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -98,7 +171,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/StudyingIT/sh++/computerScience/week10"
+    "last_opened_file_path": "D:/StudyingIT/sh++/computerScience/week11/src/com/shpp/p2p/cs/aiakovenko/assignment11"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -107,96 +180,100 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="tests" />
+      <recent name="com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticFormulas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SimpleCalculator">
-    <configuration name="SimpleCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shpp.p2p.cs.aiakovenko.assignment11.SimpleCalculator" />
-      <module name="week11" />
-      <option name="PROGRAM_PARAMETERS" value="1+2+3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shpp.p2p.cs.aiakovenko.assignment11.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleCalculatorCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.tests.unitTests in week11">
+    <configuration name="Assignment11Part1_week10_EndToEndTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.unitTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SimpleCalculatorCalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week10_EndToEndTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment11Part1_week10_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.unitTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SimpleCalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week10_EndToEndTest" />
+      <option name="METHOD_NAME" value="test_SimpleCalculator_SimpleVariables_WithUnaryMinus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment11Part1_week11_EndToEndTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="week11" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.unitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleCalculatorVariableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.unitTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SimpleCalculatorVariableTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
+      <option name="METHOD_NAME" value="testConstructor_FoNoFormula" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests in week11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="tests.unitTests in week11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.unitTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
+      <option name="PACKAGE_NAME" value="tests.unitTests" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SimpleCalculator" />
-      <item itemvalue="JUnit.tests in week11" />
-      <item itemvalue="JUnit.SimpleCalculatorCalculatorTest" />
-      <item itemvalue="JUnit.SimpleCalculatorTest" />
-      <item itemvalue="JUnit.SimpleCalculatorVariableTest" />
+      <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest" />
+      <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula" />
+      <item itemvalue="JUnit.tests.unitTests in week11" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SimpleCalculator" />
-        <item itemvalue="JUnit.tests in week11" />
-        <item itemvalue="JUnit.SimpleCalculatorVariableTest" />
-        <item itemvalue="JUnit.SimpleCalculatorTest" />
-        <item itemvalue="JUnit.SimpleCalculatorCalculatorTest" />
+        <item itemvalue="JUnit.tests.unitTests in week11" />
+        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
+        <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest" />
+        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula" />
+        <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus" />
       </list>
     </recent_temporary>
   </component>
@@ -217,24 +294,50 @@
       <option name="presentableId" value="Default" />
       <updated>1709542109014</updated>
     </task>
+    <task id="LOCAL-00001" summary="corrected silly mistake in MinusNode">
+      <option name="closed" value="true" />
+      <created>1709574554062</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709574554062</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="corrected silly mistake in MinusNode" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected silly mistake in MinusNode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/SimpleCalculator.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/SimpleExpressionParser.java</url>
-          <line>139</line>
-          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.tree.SimpleExpressionParser" method="checkVariablesInTree">
+          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java</url>
+          <line>16</line>
+          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java</url>
+          <line>19</line>
+          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.tree.ExpressionParser" method="parseStringToTree">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java</url>
+          <line>31</line>
+          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.inputParser.FormulaString" method="isValidFormula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

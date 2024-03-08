@@ -1,12 +1,12 @@
-package tests;
+package tests.unitTests;
 
-import com.shpp.p2p.cs.aiakovenko.assignment11.SimpleCalculator;
+import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class FormulaStringWithPrintedExceptionTest {
+public class Assignment11Part1_ArgsWithPrintedException_EndToEndTest {
     @Test
     public void test_isValidVariableName_VariableNode_() {
         String[] args = {"2*x4+3*y", "x=2", "y=3"};
@@ -21,7 +21,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -35,7 +35,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -52,7 +52,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -69,7 +69,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -86,7 +86,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 
@@ -104,7 +104,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -121,7 +121,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 
@@ -139,7 +139,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
     @Test
@@ -156,7 +156,7 @@ public class FormulaStringWithPrintedExceptionTest {
         System.out.println(expectedResult);
 
         System.out.print("Received result: ");
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         System.out.println();
     }
 }

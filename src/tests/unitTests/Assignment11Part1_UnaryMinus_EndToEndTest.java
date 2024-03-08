@@ -1,6 +1,6 @@
-package tests;
+package tests.unitTests;
 
-import com.shpp.p2p.cs.aiakovenko.assignment11.SimpleCalculator;
+import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SimpleCalculatorTest {
+public class Assignment11Part1_UnaryMinus_EndToEndTest {
     @Test
     public void test_SimpleCalculator_UnaryMinusAtEnd(){
         String[] args = {"1+2--3"};
@@ -17,7 +17,7 @@ public class SimpleCalculatorTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
         // Викликаємо метод main
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         // Отримуємо виведення з консолі
         String actualOutput = outputStream.toString().trim();
         // Перевіряємо, чи друкується очікуваний рядок
@@ -30,7 +30,7 @@ public class SimpleCalculatorTest {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         String actualOutput = outputStream.toString().trim();
 
         assertEquals(expectedResult, actualOutput);
@@ -42,7 +42,7 @@ public class SimpleCalculatorTest {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         String actualOutput = outputStream.toString().trim();
 
         assertEquals(expectedResult, actualOutput);
@@ -54,7 +54,7 @@ public class SimpleCalculatorTest {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
-        SimpleCalculator.main(args);
+        Assignment11Part1.main(args);
         String actualOutput = outputStream.toString().trim();
 
         assertEquals(expectedResult, actualOutput);

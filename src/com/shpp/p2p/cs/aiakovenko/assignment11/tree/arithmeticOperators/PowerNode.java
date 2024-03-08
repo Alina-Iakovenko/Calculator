@@ -1,5 +1,6 @@
 package com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticOperators;
 
+import com.shpp.p2p.cs.aiakovenko.assignment11.tree.AbstractNode;
 import com.shpp.p2p.cs.aiakovenko.assignment11.tree.Node;
 
 import java.util.List;
@@ -7,33 +8,15 @@ import java.util.List;
 /***
  * Class to save a power operator as a tree node and set rules for elevation to a degree
  */
-public class PowerNode extends Node {
-    String valueString;
-    List<Node> childNodes;
+public class PowerNode extends AbstractNode {
     Node base;
     Node power;
 
     public PowerNode(List<Node> childNodes) {
-        this.valueString = "^";
-        this.childNodes = childNodes;
+        super("^", childNodes);
         this.base = childNodes.get(0);
         this.power = childNodes.get(1);
     }
-    /***
-     * Getter for node`s value
-     * @return      string for this root
-     */
-    public String getValueString() {
-        return valueString;
-    }
-    /***
-     * Getter for node's children
-     * @return      left child node
-     */
-    public List<Node> getChildNodes() {
-        return childNodes;
-    }
-
     /***
      * Evaluate value from base node to degree in value of power node
      * @return result in a double
