@@ -61,18 +61,23 @@ public class FormulaString implements ArgsParser {
             if (charArray[i] == '(' && charArray[i + 1] == ')') {
                 throw new IllegalArgumentException(": string doesn`t match formula rules because there are empty brackets");
             }
-//            // check if there isn't a case with brackets without an operator if brackets isn't the first or the latest
+//            /* check if there isn't a case with brackets without an operator
+//            * if brackets isn't the first or the latest, but this code doesn`t support formulas
+//            * and that`s why cases with brackets without sign are caught during parsing
+//            */
 //            if (charArray[i] == '(' && ((i > 0) && charArray[i - 1] != '+'
 //                    && charArray[i - 1] != '-' && charArray[i - 1] != '*'
 //                    && charArray[i - 1] != '/' && charArray[i - 1] != '^'
 //                    && charArray[i - 1] != '(')) {
-//                throw new IllegalArgumentException(": string doesn`t match formula rules because there are brackets without operator before");
+//                throw new IllegalArgumentException(": string doesn`t match formula rules
+//                because there are brackets without operator before");
 //            }
 //            if (charArray[i] == ')' && ((i < charArray.length - 1) && charArray[i + 1] != '+'
 //                    && charArray[i + 1] != '-' && charArray[i + 1] != '*'
 //                    && charArray[i + 1] != '/' && charArray[i + 1] != '^'
 //                    && charArray[i + 1] != ')')) {
-//                throw new IllegalArgumentException(": string doesn`t match formula rules because there are brackets without operator after");
+//                throw new IllegalArgumentException(": string doesn`t match formula rules
+//                because there are brackets without operator after");
 //            }
         }
         return true;

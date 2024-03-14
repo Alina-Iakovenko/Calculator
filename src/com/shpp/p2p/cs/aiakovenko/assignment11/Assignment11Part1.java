@@ -10,7 +10,9 @@ import java.util.HashMap;
 /***
  * Simple calculator that receives formula and variables
  * in a String[] as parameters for main, and return result as double.
- * Supported operators: +, -, *, /, ^
+ * Supported operators: +, -, *, /, ^, unary minus and brackets.
+ * Supported arithmetic formulas: sin, cos, tan, atan, log10, log2, sqrt
+ *                                with arguments in brackets
  * Supported variables should consist only of letters.
  */
 public class Assignment11Part1 {

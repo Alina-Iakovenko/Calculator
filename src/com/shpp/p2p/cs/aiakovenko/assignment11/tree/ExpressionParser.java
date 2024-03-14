@@ -35,7 +35,8 @@ public class ExpressionParser {
         if (indexOfMinus == 0 ||
                 (indexOfMinus > 0 && (formula.charAt(indexOfMinus - 1) == '*'
                         || formula.charAt(indexOfMinus - 1) == '/'
-                        || formula.charAt(indexOfMinus - 1) == '^'))) {
+                        || formula.charAt(indexOfMinus - 1) == '^'))
+                                && formula.charAt(indexOfMinus+1) != '(') {
             int indexOfSecondMinus = formula.indexOf('-', indexOfMinus + 1);
             if (indexOfSecondMinus > -1) {
                 indexOfMinus = indexOfSecondMinus;

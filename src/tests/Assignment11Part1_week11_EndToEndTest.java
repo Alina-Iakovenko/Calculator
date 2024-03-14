@@ -63,6 +63,42 @@ public class Assignment11Part1_week11_EndToEndTest {
         double expectedResult = 0;
         assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
     }
+    @Test
+    public void Assignment11Part1_UnaryMinusBeforeBracketWithMinus() {
+        String formula = "-(3-5)";
+        double expectedResult = 2;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
+    @Test
+    public void Assignment11Part1_MinusBeforeBracketWithMinus() {
+        String formula = "4-(3-5)";
+        double expectedResult = 6;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
+    @Test
+    public void Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus() {
+        String formula = "1*-(3-5)";
+        double expectedResult = 2;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
+    @Test
+    public void Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus() {
+        String formula = "1*-(3-5)-5";
+        double expectedResult = -3;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
+    @Test
+    public void Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus() {
+        String formula = "1*-(3+5)-5";
+        double expectedResult = -13;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
+    @Test
+    public void Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus() {
+        String formula = "1*-(3+5)";
+        double expectedResult = -8;
+        assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
+    }
 
     @Test
     public void testAreValidBrackets_2PairsOfBrackets() {
