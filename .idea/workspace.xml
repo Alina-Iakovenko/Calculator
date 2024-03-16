@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))">
+    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="Added checking for sign before brackets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/VariableMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/VariableMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm10Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm10Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/LogarithmNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm2Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SquareNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SquareNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/TangentNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/TangentNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/Assignment11Part1_week10_EndToEndTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Assignment11Part1_week10_EndToEndTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/Assignment11Part1_week11_EndToEndTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Assignment11Part1_week11_EndToEndTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_CalculatorUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_CalculatorUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -43,123 +37,124 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Assignment11Part1.executor": "Debug",
-    "Application.SimpleCalculator.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.Assignment11Part1CalculatorTest.test_Calculator_BracketsMultiplyDivideBrackets.executor": "Run",
-    "JUnit.Assignment11Part1CalculatorTest.test_Calculator_falseBrackets.executor": "Run",
-    "JUnit.Assignment11Part1Test.executor": "Run",
-    "JUnit.Assignment11Part1VariableTest.test_SimpleCalculator_sthTerrible.executor": "Debug",
-    "JUnit.Assignment11Part1_EndToEndTest.NoValueForVariable.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.QuotesAndSpaces.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_2PairsOfBrackets.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2_false.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside_false.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_EmptyBrackets_false.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_simpleCase.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testCheckSign_simpleCase3.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testConstructor_Brackets_true.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testConstructor_InvalidBrackets_Exception.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.testParseStringToTree_PlusMinus.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_BracketsMultiplyDivideBrackets.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_DivideInZero.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_SimpleNegativeNumber_DoubleNegativePower_Exception.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_falseBrackets.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_Calculator_zeroInNegativePower.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus.executor": "Run",
-    "JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_UnaryMinusAtEnd.executor": "Run",
-    "JUnit.Assignment11Part1_UnaryMinus_UnitTest.executor": "Run",
-    "JUnit.Assignment11Part1_week10_EndToEndTest.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MinusBeforeBracketWithMinus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_UnaryMinusBeforeBracketWithMinus.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula.executor": "Run",
-    "JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotClosed_false.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotOpened_false.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testConstructor_Brackets_true.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testConstructor_InvalidBrackets2_Exception.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testConstructor_InvalidBrackets_Exception.executor": "Run",
-    "JUnit.FormulaStringBracketsTest.testConstructor_ValidData_true.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_2PairsOfBrackets.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside2.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside2_false.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside3.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside_false.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_InvalidBrackets_ExceptionThrown.executor": "Run",
-    "JUnit.FormulaStringTest.testAreValidBrackets_simpleCase.executor": "Run",
-    "JUnit.FormulaStringTest.test_isValidVariableName_VariableNode_InvalidVariableNameInFormula.executor": "Run",
-    "JUnit.FormulaStringWithPrintedExceptionTest.executor": "Run",
-    "JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_BracketsInside_false.executor": "Run",
-    "JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_EmptyBrackets_false.executor": "Run",
-    "JUnit.FormulaStringWithPrintedExceptionTest.test_isValidVariableName_VariableNode_.executor": "Run",
-    "JUnit.FormulaString_Brackets_UnitTest.testConstructor_InvalidBrackets_Exception.executor": "Run",
-    "JUnit.InvalidCasesSimpleCalculatorTest.executor": "Run",
-    "JUnit.SimpleCalculatorCalculatorTest.executor": "Run",
-    "JUnit.SimpleCalculatorTest.executor": "Run",
-    "JUnit.SimpleCalculatorVariableTest.executor": "Run",
-    "JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_Variable_Multiply_UnaryVariable_VariableTwiceOccurred_WithoutNumber.executor": "Run",
-    "JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_sthTerrible.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase0.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase2.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase3.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase4.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase5.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase6.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsPlusNumberMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusBracketsMinusDivide.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusUnaryMinusBracketsMinusDivide.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsPlusUnaryMinusBrackets.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinusMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplySimpleBrackets.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplysMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_PlusMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleBracketsMultiply.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus2.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInBrackets.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInPower2.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusForNumberInPower2.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinusMinus.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_atan.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_cos.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_log10.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_log2.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_tan.executor": "Run",
-    "JUnit.SimpleExpressionParserTest.testParseStringToTree_ійке.executor": "Run",
-    "JUnit.tests in week11.executor": "Run",
-    "JUnit.tests.unitTests in week11.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/StudyingIT/sh++/computerScience/week11/src/com/shpp/p2p/cs/aiakovenko/assignment11"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Assignment11Part1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleCalculator.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.Assignment11Part1CalculatorTest.test_Calculator_BracketsMultiplyDivideBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1CalculatorTest.test_Calculator_falseBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1Test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1VariableTest.test_SimpleCalculator_sthTerrible.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.NoValueForVariable.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.QuotesAndSpaces.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_2PairsOfBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside2_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_BracketsInside_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_EmptyBrackets_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testAreValidBrackets_simpleCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testCheckSign_simpleCase3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testConstructor_Brackets_true.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testConstructor_InvalidBrackets_Exception.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.testParseStringToTree_PlusMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_Calculator_BracketsMultiplyDivideBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_Calculator_DivideInZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_Calculator_SimpleNegativeNumber_DoubleNegativePower_Exception.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_Calculator_falseBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_Calculator_zeroInNegativePower.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_SimpleVariables_WithUnaryMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_EndToEndTest.test_SimpleCalculator_UnaryMinusAtEnd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_UnaryMinus_UnitTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week10_EndToEndTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MinusBeforeBracketWithMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_UnaryMinusBeforeBracketWithMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_atan.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotClosed_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotOpened_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testConstructor_Brackets_true.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testConstructor_InvalidBrackets2_Exception.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testConstructor_InvalidBrackets_Exception.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringBracketsTest.testConstructor_ValidData_true.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_2PairsOfBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside2_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_BracketsInside_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_InvalidBrackets_ExceptionThrown.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.testAreValidBrackets_simpleCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringTest.test_isValidVariableName_VariableNode_InvalidVariableNameInFormula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringWithPrintedExceptionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_BracketsInside_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringWithPrintedExceptionTest.testAreValidBrackets_EmptyBrackets_false.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaStringWithPrintedExceptionTest.test_isValidVariableName_VariableNode_.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FormulaString_Brackets_UnitTest.testConstructor_InvalidBrackets_Exception.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.InvalidCasesSimpleCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorVariableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_Variable_Multiply_UnaryVariable_VariableTwiceOccurred_WithoutNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleCalculatorVariableTest.test_SimpleCalculator_sthTerrible.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase0.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase4.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase5.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testCheckSign_simpleCase6.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsDivideBracketsPlusNumberMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_BracketsNumberMultiplyBracketsMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusBracketsMinusDivide.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsMinusUnaryMinusBracketsMinusDivide.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyBracketsPlusUnaryMinusBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplyMinusMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplySimpleBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_MultiplysMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_PlusMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleBracketsMultiply.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinus2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInBrackets.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SimpleSinusInPower2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusForNumberInPower2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_SinusSinusMinus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_atan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_cos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_log10.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_log2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_tan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SimpleExpressionParserTest.testParseStringToTree_ійке.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tests in week11.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tests.unitTests in week11.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/StudyingIT/sh++/computerScience/week11/src/com/shpp/p2p/cs/aiakovenko/assignment11&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\StudyingIT\sh++\computerScience\week11\src\com\shpp\p2p\cs\aiakovenko\assignment11" />
@@ -169,17 +164,32 @@
       <recent name="com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticFormulas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Assignment11Part1_week11_EndToEndTest">
+  <component name="RunManager" selected="JUnit.Assignment11Part1_week10_EndToEndTest">
     <configuration name="Assignment11Part1" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1" />
       <module name="week11" />
-      <option name="PROGRAM_PARAMETERS" value="(1+2)*a" />
+      <option name="PROGRAM_PARAMETERS" value="sin(10)" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shpp.p2p.cs.aiakovenko.assignment11.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment11Part1_week10_EndToEndTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="week11" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week10_EndToEndTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,22 +205,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="week11" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
-      <option name="METHOD_NAME" value="Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,7 +225,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment11Part1_week11_EndToEndTest.testParseStringToTree_atan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
         <pattern>
@@ -241,7 +235,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
-      <option name="METHOD_NAME" value="Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" />
+      <option name="METHOD_NAME" value="testParseStringToTree_atan" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -265,19 +259,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Assignment11Part1" />
-      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" />
-      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" />
-      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus" />
-      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" />
+      <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest" />
       <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_atan" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Assignment11Part1_week10_EndToEndTest" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
+        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_atan" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus" />
-        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" />
-        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" />
       </list>
     </recent_temporary>
   </component>
@@ -322,34 +316,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710407500445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added checking for sign before brackets">
+      <option name="closed" value="true" />
+      <created>1710595744613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710595744613</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="corrected silly mistake in MinusNode" />
     <MESSAGE value="Calculator that receive a string with formula (and variables if they are) as a parameter and return a result. Oparators -, +, /, *, ^ and unary minus, formulas sin, cos, tan, atan, log10, log2, sqrt and brackets () are availabel." />
     <MESSAGE value="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java</url>
-          <line>19</line>
-          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.tree.ExpressionParser" method="parseStringToTree">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added checking for sign before brackets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checking for sign before brackets" />
   </component>
   <component name="com.gk646.codestats.settings.Save">
     <option name="commitTimePoints">

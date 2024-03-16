@@ -45,9 +45,7 @@ public class Assignment11Part1 {
      * @return result of calculating in double
      */
     public static double calculate(Node formula, HashMap<String, Double> variables) {
-        // Check if there are variables in formula and if they are in HashMap
         ExpressionParser.checkVariablesInTree(formula, variables);
-        // Calculate using BinaryTree
         return formula.evaluate();
     }
 

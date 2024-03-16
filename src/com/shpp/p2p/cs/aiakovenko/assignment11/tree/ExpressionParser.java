@@ -3,6 +3,8 @@ package com.shpp.p2p.cs.aiakovenko.assignment11.tree;
 import com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticOperators.*;
 import com.shpp.p2p.cs.aiakovenko.assignment11.tree.arithmeticFormulas.*;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 /***
@@ -19,13 +21,179 @@ public class ExpressionParser {
      */
 
     public Node parseStringToTree(String formula) throws IllegalArgumentException {
-        //find first "+"
-        int indexOfPlus = checkSign('+', formula);
-        if (indexOfPlus > 0) {
-            AbstractNode root = new PlusNode(createChildNotes(formula, indexOfPlus));
+        Node root;
+
+        root = getPlusNode(formula);
+        if (root != null) return root;
+
+        root = getMinusNode(formula);
+        if (root != null) return root;
+
+        root = getMultiplyNode(formula);
+        if (root != null) return root;
+
+        root = getDivideNode(formula);
+        if (root != null) return root;
+
+        root = getPowerNode(formula);
+        if (root != null) return root;
+
+        root = getUnaryMinusNode(formula);
+        if (root != null) return root;
+
+        root = getNumberNode(formula);
+        if (root != null) return root;
+
+        root = getVariableNode(formula);
+        if (root != null) return root;
+
+        root = getBracketsNode(formula);
+        if (root != null) return root;
+
+        root = getFormulaNode(formula);
+        if (root != null) return root;
+
+        else {
+            throw new IllegalArgumentException(": formula isn`t valid");
+        }
+    }
+
+    /**
+     * Creates one of ArithmeticFormulaNode concrete class
+     * @param formula   string with formula to check
+     * @return          instance of class or null
+     */
+    private Node getFormulaNode(String formula) {
+        try {
+            HashMap<String, Class<? extends ArithmeticFormulaNode>> arithmeticFormulas = getFormulasMap();
+            for (String formulaStart : arithmeticFormulas.keySet()) {
+                if (formula.startsWith(formulaStart)) {
+                    String argument = formula.substring(formulaStart.length(), formula.length() - 1);
+                    Class<? extends ArithmeticFormulaNode> aClass = arithmeticFormulas.get(formulaStart);
+                    Constructor<? extends ArithmeticFormulaNode> constructor = aClass.getConstructor(String.class);
+                    return constructor.newInstance(argument);
+                }
+            }
+            return null;
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Creates HashMap with one of possible starts of string with arithmetic formula and class for it
+     * @return  HashMap
+     */
+    private HashMap<String, Class<? extends ArithmeticFormulaNode>> getFormulasMap() {
+        HashMap<String, Class<? extends ArithmeticFormulaNode>> formulas = new HashMap<>();
+        formulas.put("sin(", SineNode.class);
+        formulas.put("cos(", CosineNode.class);
+        formulas.put("tan(", TangentNode.class);
+        formulas.put("atan(", AtangentNode.class);
+        formulas.put("log10(", Logarithm10Node.class);
+        formulas.put("log2(", Logarithm2Node.class);
+        formulas.put("sqrt(", SquareNode.class);
+        return formulas;
+    }
+    /**
+     * Creates new instance of BracketsNode if sign '(' is found
+     * @param formula   string to parse
+     * @return          BracketsNode or null
+     */
+    private Node getBracketsNode(String formula) {
+        if (formula.charAt(0) == '(' && formula.charAt(formula.length() - 1) == ')') {
+            Node root = new BracketsNode(formula.substring(1, formula.length() - 1));
             return root;
         }
-        //find first "-"
+        return null;
+    }
+    /**
+     * Creates new instance of VariableNode if a string is variable
+     * @param formula   string to parse
+     * @return          VariableNode or null
+     */
+    private Node getVariableNode(String formula) {
+        if (VariableNode.isValidVariableName(formula)) {
+            Node root = new VariableNode(formula);
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of NumberNode if a string is a number
+     * @param formula   string to parse
+     * @return          NumberNode or null
+     */
+    private AbstractNode getNumberNode(String formula) {
+        if (ValueNode.isNumber(formula)) {
+            AbstractNode root = new ValueNode(formula);
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of UnaryNode if unary minus is found
+     * @param formula   string to parse
+     * @return          UnaryNode or null
+     */
+    private AbstractNode getUnaryMinusNode(String formula) {
+        if (formula.indexOf('-') == 0) {
+            List<Node> childNodes = new ArrayList<>();
+            String childNodeString = formula.substring(1);
+            Node childNode = parseStringToTree(childNodeString);
+            childNodes.add(childNode);
+            childNodes.add(null);
+            AbstractNode root = new UnaryMinusNode(childNodes);
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of PowerNode if sign '^' is found
+     * @param formula   string to parse
+     * @return          PowerNode or null
+     */
+    private AbstractNode getPowerNode(String formula) {
+        int indexOfPower = checkSign('^', formula);
+        if (indexOfPower > 0) {
+            AbstractNode root = new PowerNode(createChildNotes(formula, indexOfPower));
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of DivideNode if sign '/' is found
+     * @param formula   string to parse
+     * @return          DivideNode or null
+     */
+    private AbstractNode getDivideNode(String formula) {
+        int indexOfDivision = checkSign('/', formula);
+        if (indexOfDivision > 0) {
+            AbstractNode root = new DivideNode(createChildNotes(formula, indexOfDivision));
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of MultiplyNode if sign '*' is found
+     * @param formula   string to parse
+     * @return          MultiplyNode or null
+     */
+    private AbstractNode getMultiplyNode(String formula) {
+        int indexOfMultiply = checkSign('*', formula);
+        if (indexOfMultiply > 0) {
+            AbstractNode root = new MultiplyNode(createChildNotes(formula, indexOfMultiply));
+            return root;
+        }
+        return null;
+    }
+    /**
+     * Creates new instance of MinusNode if sign '-' is found
+     * @param formula   string to parse
+     * @return          MinusNode or null
+     */
+    private AbstractNode getMinusNode(String formula) {
         int indexOfMinus = checkSign('-', formula);
         /* Check if
          * the minus is unary (is the first or precede by another sign),
@@ -36,7 +204,7 @@ public class ExpressionParser {
                 (indexOfMinus > 0 && (formula.charAt(indexOfMinus - 1) == '*'
                         || formula.charAt(indexOfMinus - 1) == '/'
                         || formula.charAt(indexOfMinus - 1) == '^'))
-                                && formula.charAt(indexOfMinus+1) != '(') {
+                        && formula.charAt(indexOfMinus + 1) != '(') {
             int indexOfSecondMinus = formula.indexOf('-', indexOfMinus + 1);
             if (indexOfSecondMinus > -1) {
                 indexOfMinus = indexOfSecondMinus;
@@ -51,89 +219,28 @@ public class ExpressionParser {
             AbstractNode root = new MinusNode(createChildNotes(formula, indexOfMinus));
             return root;
         }
-
-        //find first "*"
-        int indexOfMultiply = checkSign('*', formula);
-        if (indexOfMultiply > 0) {
-            AbstractNode root = new MultiplyNode(createChildNotes(formula, indexOfMultiply));
-            return root;
-        }
-        //find first "/"
-        int indexOfDivision = checkSign('/', formula);
-        if (indexOfDivision > 0) {
-            AbstractNode root = new DivideNode(createChildNotes(formula, indexOfDivision));
-            return root;
-        }
-        //find first "^"
-        int indexOfPower = checkSign('^', formula);
-        if (indexOfPower > 0) {
-            AbstractNode root = new PowerNode(createChildNotes(formula, indexOfPower));
-            return root;
-        }
-        //find first unary "-"
-        if (formula.indexOf('-') == 0) {
-            List<Node> childNodes = new ArrayList<>();
-            String childNodeString = formula.substring(1);
-            Node childNode = parseStringToTree(childNodeString);
-            childNodes.add(childNode);
-            childNodes.add(null);
-            AbstractNode root = new UnaryMinusNode(childNodes);
-            return root;
-        }
-        //find a number (contains only digits and period)
-        if (ValueNode.isNumber(formula)) {
-            AbstractNode root = new ValueNode(formula);
-            return root;
-        }
-        //find a valid variable (contains only letters)
-        if (VariableNode.isValidVariableName(formula)) {
-            Node root = new VariableNode(formula);
-            return root;
-        }
-        // brackets
-        if (formula.charAt(0) == '(' && formula.charAt(formula.length()-1) == ')') {
-            Node root = new BracketsNode(formula.substring(1,formula.length()-1));
-            return root;
-        }
-        // arithmetic formulas
-        if (formula.startsWith("sin(")){
-            Node root = new SineNode(formula.substring(4, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("cos(")){
-            Node root = new CosineNode(formula.substring(4, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("tan(")){
-            Node root = new TangentNode(formula.substring(4, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("atan(")){
-            Node root = new AtangentNode(formula.substring(5, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("log10(")){
-            Node root = new Logarithm10Node(formula.substring(6, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("log2(")){
-            Node root = new Logarithm2Node(formula.substring(5, formula.length()-1));
-            return root;
-        }
-        if (formula.startsWith("sqrt(")){
-            Node root = new SquareNode(formula.substring(5, formula.length()-1));
-            return root;
-        }
-        else {
-            throw new IllegalArgumentException(": formula isn`t valid");
-        }
+        return null;
     }
 
-    /***
+    /**
+     * Creates new instance of PlusNode if sign '+' is found
+     * @param formula   string to parse
+     * @return          PlusNode or null
+     */
+    private AbstractNode getPlusNode(String formula) {
+        int indexOfPlus = checkSign('+', formula);
+        if (indexOfPlus > 0) {
+            AbstractNode root = new PlusNode(createChildNotes(formula, indexOfPlus));
+            return root;
+        }
+        return null;
+    }
+
+    /**
      * Find sign in formula out of brackets
      * @param sign      sign to find
      * @param formula   string to check
-     * @return          index of sign or -1 if sign is absent
+     * @return index of sign or -1 if sign is absent
      */
     public int checkSign(char sign, String formula) {
         Deque<Character> brackets = new ArrayDeque<>();
@@ -168,7 +275,7 @@ public class ExpressionParser {
         return -1;
     }
 
-    /***
+    /**
      * Creates left and right child nodes
      * @param formula           string to parse to nodes
      * @param indexOfSign       index of sing that is root node and split the string
@@ -192,7 +299,7 @@ public class ExpressionParser {
     }
     // we don't use it, but it's useful for finding mistakes and is basic for the next method
 
-    /***
+    /**
      * Traverses tree and print every node
      * @param node  root node
      */
@@ -207,7 +314,7 @@ public class ExpressionParser {
         }
     }
 
-    /***
+    /**
      * Traverse a tree and check if there are VariableNode
      * and check if there is value for it in data
      * @param node      formula saved in tree structure
