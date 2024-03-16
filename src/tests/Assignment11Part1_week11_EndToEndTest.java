@@ -250,7 +250,7 @@ public class Assignment11Part1_week11_EndToEndTest {
     @Test
     public void testParseStringToTree_log2() {
         String formula = "log2(4)";
-        double expectedResult = 1.3862943611198906;
+        double expectedResult = 2.0;
         assertEquals(expectedResult, Assignment11Part1.testMain(new String[]{formula}));
     }
 

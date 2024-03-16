@@ -9,6 +9,10 @@ public class SquareNode extends ArithmeticFormulaNode {
 
     @Override
     public double evaluate() {
-        return Math.sqrt(argument.evaluate());
+        double evaluatedArgument = argument.evaluate();
+        if (evaluatedArgument < 0) {
+            throw new IllegalArgumentException(" in SqrtNode: argument must be non-negative");
+        }
+        return Math.sqrt(evaluatedArgument);
     }
 }

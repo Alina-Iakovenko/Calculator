@@ -12,6 +12,10 @@ public class Logarithm10Node extends ArithmeticFormulaNode {
 
     @Override
     public double evaluate() {
-        return Math.log10(argument.evaluate());
+        double evaluatedArgument = argument.evaluate();
+        if (evaluatedArgument <= 0) {
+            throw new IllegalArgumentException(" in Log10Node: argument must be greater than 0");
+        }
+        return Math.log10(evaluatedArgument);
     }
 }

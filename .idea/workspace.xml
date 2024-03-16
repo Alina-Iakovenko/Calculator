@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="Calculator that receive a string with formula (and variables if they are) as a parameter and return a result. Oparators -, +, /, *, ^ and unary minus, formulas sin, cos, tan, atan, log10, log2, sqrt and brackets () are availabel.">
+    <list default="true" id="6862c66e-c7c3-4a30-8e20-873e6f1c9d30" name="Changes" comment="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/VariableMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/VariableMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/VariableNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm10Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm10Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/LogarithmNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/Logarithm2Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SquareNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/SquareNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/TangentNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/arithmeticFormulas/TangentNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/Assignment11Part1_week11_EndToEndTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Assignment11Part1_week11_EndToEndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_CalculatorUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unitTests/Assignment11Part1_CalculatorUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Assignment11Part1.executor": "Run",
+    "Application.Assignment11Part1.executor": "Debug",
     "Application.SimpleCalculator.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.Assignment11Part1CalculatorTest.test_Calculator_BracketsMultiplyDivideBrackets.executor": "Run",
@@ -77,6 +84,7 @@
     "JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_UnaryMinusBeforeBracketWithMinus.executor": "Run",
     "JUnit.Assignment11Part1_week11_EndToEndTest.executor": "Run",
     "JUnit.Assignment11Part1_week11_EndToEndTest.testConstructor_FoNoFormula.executor": "Run",
+    "JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2.executor": "Run",
     "JUnit.FormulaStringBracketsTest.executor": "Run",
     "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotClosed_false.executor": "Run",
     "JUnit.FormulaStringBracketsTest.testAreValidBrackets_NotOpened_false.executor": "Run",
@@ -165,7 +173,7 @@
     <configuration name="Assignment11Part1" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1" />
       <module name="week11" />
-      <option name="PROGRAM_PARAMETERS" value="1*-(-3-1)" />
+      <option name="PROGRAM_PARAMETERS" value="(1+2)*a" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.shpp.p2p.cs.aiakovenko.assignment11.*" />
@@ -223,22 +231,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="week11" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
-      <option name="METHOD_NAME" value="Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="week11" />
       <extension name="coverage">
@@ -255,21 +247,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="week11" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Assignment11Part1_week11_EndToEndTest" />
+      <option name="METHOD_NAME" value="testParseStringToTree_log2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Assignment11Part1" />
+      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" />
       <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" />
       <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus" />
-      <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus" />
       <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" />
       <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest" />
+        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.testParseStringToTree_log2" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinusAndMoreMinus" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithMinus" />
         <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlusAndMoreMinus" />
-        <item itemvalue="JUnit.Assignment11Part1_week11_EndToEndTest.Assignment11Part1_MultiplyUnaryMinusBeforeBracketWithPlus" />
       </list>
     </recent_temporary>
   </component>
@@ -306,13 +314,22 @@
       <option name="project" value="LOCAL" />
       <updated>1709920869696</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))">
+      <option name="closed" value="true" />
+      <created>1710407500445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710407500445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="corrected silly mistake in MinusNode" />
     <MESSAGE value="Calculator that receive a string with formula (and variables if they are) as a parameter and return a result. Oparators -, +, /, *, ^ and unary minus, formulas sin, cos, tan, atan, log10, log2, sqrt and brackets () are availabel." />
-    <option name="LAST_COMMIT_MESSAGE" value="Calculator that receive a string with formula (and variables if they are) as a parameter and return a result. Oparators -, +, /, *, ^ and unary minus, formulas sin, cos, tan, atan, log10, log2, sqrt and brackets () are availabel." />
+    <MESSAGE value="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected case with unary minus after *, /,^ and before bracket with minus in (for example, 1*-(3-5))" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -326,34 +343,34 @@
           </properties>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/inputParser/FormulaString.java</url>
-          <line>31</line>
-          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.inputParser.FormulaString" method="isValidFormula">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/Assignment11Part1.java</url>
-          <line>38</line>
-          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1" method="calculate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/shpp/p2p/cs/aiakovenko/assignment11/tree/ExpressionParser.java</url>
-          <line>137</line>
-          <properties class="com.shpp.p2p.cs.aiakovenko.assignment11.tree.ExpressionParser" method="checkSign">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="15" />
+          <line>48</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="commitTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1710407500539" />
+          <option name="linesCode" value="1936" />
+          <option name="totalLines" value="2563" />
+          <option name="info" value="Corrected case with unary" />
+        </TimePoint>
+      </list>
+    </option>
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1710407500539" />
+          <option name="linesCode" value="1936" />
+          <option name="totalLines" value="2563" />
+          <option name="info" value="14 бер. 2024 р." />
+        </TimePoint>
+      </list>
+    </option>
   </component>
 </project>

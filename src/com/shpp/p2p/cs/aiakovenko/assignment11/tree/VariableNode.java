@@ -35,22 +35,6 @@ public class VariableNode extends AbstractNode {
     }
 
     /***
-     * Check if a variable is in a map from arguments
-     * @param variables         map with variables and their value
-     * @throws IllegalArgumentException     if there is no variables in map
-     *                                      or any of them equals to this
-     */
-    void checkVariableInMap(HashMap<String, Double> variables) throws IllegalArgumentException {
-        if (variables == null) {
-            throw new IllegalArgumentException(": no data for variable from formula");
-        }
-        // Get all map's keys and check if any of it is equals to variable name from formula
-        if (variables.containsKey(this.variable)) {
-             return;
-        }
-        throw new IllegalArgumentException(": no data for variable from formula");
-    }
-    /***
      * Get value vor variable from map and returns it as double
      * @return double
      */

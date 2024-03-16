@@ -9,6 +9,10 @@ public class TangentNode extends ArithmeticFormulaNode {
 
     @Override
     public double evaluate() {
-        return Math.tan(argument.evaluate());
+        double evaluatedArgument = argument.evaluate();
+        if (Math.abs(evaluatedArgument - Math.PI/2) % Math.PI == 0) {
+            throw new IllegalArgumentException(" in TangentNode: argument is out of the valid range");
+        }
+        return Math.tan(evaluatedArgument);
     }
 }

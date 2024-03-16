@@ -2,7 +2,8 @@ package com.shpp.p2p.cs.aiakovenko.assignment11.inputParser;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /***
  * Class to get formula from args, check it and save in String
@@ -20,7 +21,10 @@ public class FormulaString implements ArgsParser {
         } else {
             throw new RuntimeException(": no formula found");
         }
+    }
 
+    public String getFormula() {
+        return formula;
     }
 
     /***
@@ -57,28 +61,6 @@ public class FormulaString implements ArgsParser {
                     || charArray[i + 1] == '/' || charArray[i + 1] == '^')) {
                 throw new IllegalArgumentException(": string doesn`t match formula rules");
             }
-            // Check for empty brackets
-            if (charArray[i] == '(' && charArray[i + 1] == ')') {
-                throw new IllegalArgumentException(": string doesn`t match formula rules because there are empty brackets");
-            }
-//            /* check if there isn't a case with brackets without an operator
-//            * if brackets isn't the first or the latest, but this code doesn`t support formulas
-//            * and that`s why cases with brackets without sign are caught during parsing
-//            */
-//            if (charArray[i] == '(' && ((i > 0) && charArray[i - 1] != '+'
-//                    && charArray[i - 1] != '-' && charArray[i - 1] != '*'
-//                    && charArray[i - 1] != '/' && charArray[i - 1] != '^'
-//                    && charArray[i - 1] != '(')) {
-//                throw new IllegalArgumentException(": string doesn`t match formula rules
-//                because there are brackets without operator before");
-//            }
-//            if (charArray[i] == ')' && ((i < charArray.length - 1) && charArray[i + 1] != '+'
-//                    && charArray[i + 1] != '-' && charArray[i + 1] != '*'
-//                    && charArray[i + 1] != '/' && charArray[i + 1] != '^'
-//                    && charArray[i + 1] != ')')) {
-//                throw new IllegalArgumentException(": string doesn`t match formula rules
-//                because there are brackets without operator after");
-//            }
         }
         return true;
     }
@@ -86,10 +68,50 @@ public class FormulaString implements ArgsParser {
     /***
      * Check if all open bracket matches close bracket in formula
      * @param formula   String to check
-     * @return          true if the formula is correct
+     * @return true if the formula is correct
      * @throws IllegalArgumentException        if brackets in string don't match formula rules
      */
-    public static boolean areValidBrackets(String formula) throws IllegalArgumentException{
+    public static boolean areValidBrackets(String formula) throws IllegalArgumentException {
+        if(areAllBracketsMatches(formula)
+                && isNoEmptyBrackets(formula)
+                && isNoNotFirstOpenBracketWithoutSign(formula)
+                && isNoNotLastCloseBracketWithoutSign(formula)) {
+            return true;
+        }
+       return false;
+    }
+
+    private static boolean isNoNotLastCloseBracketWithoutSign(String formula) {
+        String regex2 = "\\)(?![+\\-*/^)])(?=.+)";
+        Pattern pattern2 = Pattern.compile(regex2);
+        Matcher matcher2 = pattern2.matcher(formula);
+        if (matcher2.find()) {
+            throw new IllegalArgumentException(": found an closing parenthesis that doesn`t match the condition.");
+        }
+        return true;
+    }
+
+    private static boolean isNoNotFirstOpenBracketWithoutSign(String formula) {
+        String regex = "(?<!^)(?<!\\()(?<!(\\b(sin|cos|tan|atan|log10|log2|sqrt))|\\+|-|\\*|/|\\^)\\(";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(formula);
+        if (matcher.find()) {
+            throw new IllegalArgumentException("Found an opening parenthesis without preceding signs.");
+        }
+        return true;
+    }
+
+    private static boolean isNoEmptyBrackets(String formula) {
+        char[] charArray = formula.toCharArray();
+        for (int i = 0; i < charArray.length - 1; i++) {
+            if (charArray[i] == '(' && charArray[i + 1] == ')') {
+                throw new IllegalArgumentException(": string doesn`t match formula rules because there are empty brackets");
+            }
+        }
+        return true;
+    }
+
+    private static boolean areAllBracketsMatches(String formula) {
         Deque<Character> brackets = new ArrayDeque<>();
         for (Character character : formula.toCharArray()) {
             if (character == '(') {
@@ -108,5 +130,6 @@ public class FormulaString implements ArgsParser {
         }
         return true;
     }
+
 }
 

@@ -18,12 +18,20 @@ import java.util.HashMap;
 public class Assignment11Part1 {
     public static void main(String[] args) {
         try {
-            // Get formula from args and do primary check
+            // Get formula from args, do primary check and parse to BinaryTree
             FormulaString formula = new FormulaString(args);
-            // Get variables from args and do primary check
+            ExpressionParser formulaParser = new ExpressionParser();
+            Node tree = formulaParser.parseStringToTree(formula.getFormula());
+
+            // Get variables from args
             VariableMap variables = new VariableMap(args);
+
             // Calculate formula and print result
-            System.out.println(calculate(formula.formula, variables.variables));
+            System.out.println(calculate(tree, variables.getVariables()));
+
+//            // to show that formula is saved, and we don't need another parsing process:
+//            variables.setAnotherValueToVariable("a",10);
+//            System.out.println(calculate(tree, variables.getVariables()));
         } catch (Exception e) {
             // Print what was wrong
             System.err.println("Exception occured" + e.getMessage());
@@ -36,16 +44,11 @@ public class Assignment11Part1 {
      * @param variables     HashMap with variables that meets the conditions of the variables
      * @return result of calculating in double
      */
-    public static double calculate(String formula, HashMap<String, Double> variables) {
-        // Parse formula to BinaryTree
-        ExpressionParser formulaParser = new ExpressionParser();
-        Node tree = formulaParser.parseStringToTree(formula);
-//        formulaParser.preOrderTraverseTree(tree);
-//        System.out.println("");
+    public static double calculate(Node formula, HashMap<String, Double> variables) {
         // Check if there are variables in formula and if they are in HashMap
-        formulaParser.checkVariablesInTree(tree, variables);
+        ExpressionParser.checkVariablesInTree(formula, variables);
         // Calculate using BinaryTree
-        return tree.evaluate();
+        return formula.evaluate();
     }
 
     /***
@@ -54,7 +57,9 @@ public class Assignment11Part1 {
      */
     public static double testMain(String[] args) {
         FormulaString formula = new FormulaString(args);
+        ExpressionParser formulaParser = new ExpressionParser();
+        Node tree = formulaParser.parseStringToTree(formula.getFormula());
         VariableMap variables = new VariableMap(args);
-        return calculate(formula.formula, variables.variables);
+        return calculate(tree, variables.getVariables());
     }
 }

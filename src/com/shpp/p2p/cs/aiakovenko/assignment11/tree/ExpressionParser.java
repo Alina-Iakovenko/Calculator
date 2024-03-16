@@ -117,7 +117,7 @@ public class ExpressionParser {
             return root;
         }
         if (formula.startsWith("log2(")){
-            Node root = new LogarithmNode(formula.substring(5, formula.length()-1));
+            Node root = new Logarithm2Node(formula.substring(5, formula.length()-1));
             return root;
         }
         if (formula.startsWith("sqrt(")){
@@ -213,12 +213,18 @@ public class ExpressionParser {
      * @param node      formula saved in tree structure
      * @param variables HashMap with saved variables with values
      */
-    public void checkVariablesInTree(Node node, HashMap<String, Double> variables) {
+    public static void checkVariablesInTree(Node node, HashMap<String, Double> variables) {
         if (node == null) {
             return;
         }
         if (node instanceof VariableNode) {
-            ((VariableNode) node).checkVariableInMap(variables);
+            if (variables == null) {
+                throw new IllegalArgumentException(": no data structure with variables from formula");
+            }
+            if (variables.containsKey(node.getValueString())) {
+                return;
+            }
+            throw new IllegalArgumentException(": no data for variable from formula");
         }
         if (node.getChildNodes() != null) {
             checkVariablesInTree(node.getChildNodes().get(0), variables);

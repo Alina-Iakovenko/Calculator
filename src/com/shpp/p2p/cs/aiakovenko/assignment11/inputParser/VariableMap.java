@@ -15,6 +15,10 @@ public class VariableMap implements ArgsParser {
         }
     }
 
+    public HashMap<String, Double> getVariables() {
+        return variables;
+    }
+
     /***
      * Save variables to HashMap if they are correct
      * @param args  String[] with data for variables
@@ -26,12 +30,10 @@ public class VariableMap implements ArgsParser {
         String[] variablesStrings = Arrays.copyOfRange(args, 1, args.length);
         // For each variable string
         for (String variableAndValue : variablesStrings) {
-            // Remove quotes and spaces
-            String clearedVariableAndValue = getClearString(variableAndValue);
             // Divide for name and value
-            String[] varAndVal = clearedVariableAndValue.split("=");
-            if (isValidInputVariable(varAndVal)) {
-                variables.put(varAndVal[0], Double.parseDouble(varAndVal[1]));
+            String[] oneVariableWithValue = getClearString(variableAndValue).split("=");
+            if (isValidInputVariable(oneVariableWithValue)) {
+                variables.put(oneVariableWithValue[0], Double.parseDouble(oneVariableWithValue[1]));
             }
         }
         return variables;
@@ -82,7 +84,7 @@ public class VariableMap implements ArgsParser {
      * @param variableName  string with variable name which we will change
      * @param newValue      a double to change to
      */
-    void setAnotherValueToVariable(String variableName, double newValue) {
+    public void setAnotherValueToVariable(String variableName, double newValue) {
         variables.put(variableName, newValue);
     }
 }
