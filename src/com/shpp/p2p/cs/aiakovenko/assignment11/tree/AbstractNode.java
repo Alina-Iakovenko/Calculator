@@ -36,4 +36,18 @@ public abstract class AbstractNode implements Node{
     public List<Node> getChildNodes() {
         return childNodes;
     }
+    /***
+     * Getter for the first node's children
+     * @return      left child node
+     */
+    public Node getFirstChildNode() {
+        return childNodes.get(0);
+    }
+    /***
+     * Getter for the second node's children
+     * @return      left child node
+     */
+    public Node getSecondChildNode() {
+        return childNodes.get(1);
+    }
 }

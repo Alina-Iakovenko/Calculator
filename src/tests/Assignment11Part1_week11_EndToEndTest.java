@@ -1,6 +1,8 @@
 package tests;
 
 import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
+//import com.shpp.p2p.cs.hherasymenko.assignment11.Assignment11Part1;
+//import com.shpp.p2p.cs.ryaroshenko.assignment11.Assignment11Part1;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
@@ -275,6 +277,12 @@ public class Assignment11Part1_week11_EndToEndTest {
     public void test_SimpleCalculator_sthTerrible() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         String[] args = {"( 1 + 2 * 3 / 4 ^ 5 + ( -6 * 7 / ( cos ( 8 ) ^ 9 + sin ( tan ( atan ( log2 ( 10 ) ^ 11 ) / 12 ) * 13 ) + 14 - 15 * 16 ) ) ^ 17 - 18 + ( -19 ^ ( -20 ) ) * ( -21 ) + 22 ^ 23 + tan ( 24 ) - sqrt ( 25 ) - 26 + 27 ^ 28 / 29 - 30 ) / 31 ^ a + sqrt ( sqrt ( 625 ) )", "a = 36"};
         double expectedResult = 5.000000000000001;
+        assertEquals(expectedResult, Assignment11Part1.testMain(args));
+    }
+    @Test
+    public void test_SimpleCalculator_strangeBrackets() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        String[] args = {"((-(5+2))+1)"};
+        double expectedResult = -6.0;
         assertEquals(expectedResult, Assignment11Part1.testMain(args));
     }
 }
