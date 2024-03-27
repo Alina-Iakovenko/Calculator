@@ -15,7 +15,7 @@ public class FormulaString implements ArgsParser {
         if (args.length > 0) {
             // Remove quotes, spaces and replace -- to +
             String formulaString = getClearString(args[0].trim());
-            if (isValidFormula(formulaString) && areValidBrackets(formulaString)) {
+            if (areOnlyCorrectCharacters(formulaString) && areValidBrackets(formulaString)) {
                 this.formula = formulaString;
             }
         } else {
@@ -33,7 +33,7 @@ public class FormulaString implements ArgsParser {
      * @return true if everything is correct or Exception if sth is wrong
      * @throws IllegalArgumentException if string doesn`t match formula rules
      */
-    protected boolean isValidFormula(String formula) throws IllegalArgumentException {
+    protected boolean areOnlyCorrectCharacters(String formula) throws IllegalArgumentException {
         char[] charArray = formula.toCharArray();
         // Check if string begins with a letter, a number or minus
         if (charArray[0] != '-' && !Character.isDigit(charArray[0]) && !Character.isLetter(charArray[0]) && charArray[0] != '(') {
