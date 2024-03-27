@@ -1,8 +1,6 @@
 package tests;
 
-//import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
-import com.shpp.p2p.cs.ryaroshenko.assignment11.Assignment11Part1;
-//import com.shpp.p2p.cs.hherasymenko.assignment11.Assignment11Part1;
+import com.shpp.p2p.cs.aiakovenko.assignment11.Assignment11Part1;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
